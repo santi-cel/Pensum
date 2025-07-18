@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pensum Interactivo EAN - Cely</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 20px;
+            background: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .semestre {
+            background: #fff;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .semestre h2 {
+            text-align: center;
+            margin-top: 0;
+            font-size: 18px;
+            color: #0074D9;
+        }
+        .materia {
+            background-color: #ecf0f1;
+            border-left: 5px solid #3498db;
+            margin: 5px 0;
+            padding: 6px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.3s ease;
+        }
+        .materia:hover {
+            background-color: #d0e6f7;
+        }
+        .materia.completada {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        .tooltip {
+            visibility: hidden;
+            background-color: #333;
+            color: #fff;
+            text-align: left;
+            border-radius: 4px;
+            padding: 5px 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 0;
+            width: 220px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 12px;
+        }
+        .materia:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+        .prerreq {
+            font-size: 10px;
+            color: #c0392b;
+            margin-top: 2px;
+        }
+        .reset-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .reset-btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Pensum Interactivo - Ingeniería de Sistemas EAN</h1>
+
+<button class="reset-btn" onclick="resetearTodo()">Desmarcar todas las materias</button>
+
+<div class="grid">
+<!-- Semestre 1 -->
+<div class="semestre"><h2>Semestre 1</h2>
+<div class="materia" onclick="this.classList.toggle('completada')">Cálculo Diferencial<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Álgebra Lineal<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Ingenium for a better world<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Algoritmos y Programación<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Real Maths<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Ciudadano global y ético<div class="tooltip">Descripción pendiente</div></div>
+</div>
+
+<!-- Semestre 2 -->
+<div class="semestre"><h2>Semestre 2</h2>
+<div class="materia" onclick="this.classList.toggle('completada')">Cálculo Integral<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Física Mecánica<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Química General<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Programación Orientada por Objetos<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">El poder de las probabilidades<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Idioma I<div class="tooltip">Descripción pendiente</div></div>
+</div>
+
+<!-- Semestre 3 -->
+<div class="semestre"><h2>Semestre 3</h2>
+<div class="materia" onclick="this.classList.toggle('completada')">Cálculo Multivariado<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Biología general<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Estructura de Datos<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Arquitectura de Computadores y SO<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Trend + Tech<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Idioma II<div class="tooltip">Descripción pendiente</div></div>
+</div>
+
+<!-- Semestre 4 -->
+<div class="semestre"><h2>Semestre 4</h2>
+<div class="materia" onclick="this.classList.toggle('completada')">Ecuaciones Diferenciales<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Física Electromagnetismo<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Bases de datos<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Prob. y Estadística Inferencial<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">DataXperience<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Idioma III<div class="tooltip">Descripción pendiente</div></div>
+</div>
+
+<!-- Puedes continuar los semestres 5 a 8 de la misma forma... -->
+<!-- Semestre 5 -->
+<div class="semestre"><h2>Semestre 5</h2>
+<div class="materia" onclick="this.classList.toggle('completada')">Métodos Numéricos<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Matemáticas Discretas<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Seguridad integral TI<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Redes I<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Power skills<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Idioma IV<div class="tooltip">Descripción pendiente</div></div>
+</div>
+
+<!-- Semestre 6 -->
+<div class="semestre"><h2>Semestre 6</h2>
+<div class="materia" onclick="this.classList.toggle('completada')">Sistemas de Información<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Desarrollo Web y Móvil<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Conexión Ambiental<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Redes II<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Funding Leaders<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Ser Emprendedor = Actor de cambio<div class="tooltip">Descripción pendiente</div></div>
+</div>
+
+<!-- Semestre 7 -->
+<div class="semestre"><h2>Semestre 7</h2>
+<div class="materia" onclick="this.classList.toggle('completada')">Arquitectura de Software<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Tecnologías disruptivas<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Gestión de proyectos<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Sandbox<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Formación integral I<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Formación integral II<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Seminario de Investigación<div class="tooltip">Descripción pendiente</div></div>
+</div>
+
+<!-- Semestre 8 -->
+<div class="semestre"><h2>Semestre 8</h2>
+<div class="materia" onclick="this.classList.toggle('completada')">SosTECnibilidad 360<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Startup impacta<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Electiva I<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Electiva II<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Electiva III<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Proyecto de Grado<div class="tooltip">Descripción pendiente</div></div>
+<div class="materia" onclick="this.classList.toggle('completada')">Práctica profesional<div class="tooltip">Descripción pendiente</div></div>
+</div>
+
+
+<script>
+function resetearTodo() {
+    document.querySelectorAll('.materia').forEach(el => el.classList.remove('completada'));
+}
+</script>
+
+</body>
+</html>
